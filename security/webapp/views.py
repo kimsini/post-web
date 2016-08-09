@@ -16,6 +16,7 @@ from django.core import serializers
 from django.http import HttpResponse
 from django.contrib.auth import logout
 from django.core.urlresolvers import reverse
+import json
 
 
 def post_list(request):
@@ -39,10 +40,11 @@ def RegisterDevice(request):
             device = form.save(commit=False)
             device.author = request.user
             device.save()
-            return HttpResponseRedirect(reverse('main_page'))
+            return HttpResponseRedirect('/main/page')
+           # return HttpResponseRedirect(reverse('main_page'))
     else:
         form = DevicesForm()
-    return HttpResponseRedirect(reverse('main_page'))
+    return HttpResponseRedirect('/')
 
 def loginView(request):
   return render(request, 'webapp/main_page.html')
@@ -122,12 +124,12 @@ def change_user(request, pk):
     if user is not None:
         if user.is_active:
             login(request, user)
-            return redirect('blog.views.user_info')
+            return HttpResponseRedirect(reverse('user_info'))
         else:
             return HttpResponse("Disable tp access account.")
     else:
         return HttpResponse("Invalid this  account.")
 
-    return HttpResponseRedirect('/')
+    return HttpResponseRedirect(reverse('user_info'))
 
 # Create your views here.

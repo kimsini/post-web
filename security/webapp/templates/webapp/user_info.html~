@@ -105,7 +105,11 @@
                     <a href="{% url 'main_page'  %}"><i class="fa fa-user"></i><span> Main Menu</span></a>
                 </li>     
  		<li class="">
-                    <a href="{% url 'user_info'  %}"><i class="fa fa-key"></i> Change user Info</a>
+                    <a href="{% url 'user_info'  %}"><i class="fa fa-key"></i> Change user Info</a><!--
+                    <ul class="treeview-menu">
+                        <li class="active"><a href="{% url 'user_info'  %}"><i class="fa fa-key"></i> Change user Info</a></li>
+
+                    </ul>-->
                 </li>  
 		<li class="">
                     <a href="{% url 'history_page'  %}"><i class="fa fa-user"></i><span>History Info</span></a>

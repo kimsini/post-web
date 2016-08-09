@@ -324,7 +324,7 @@
                 <div class="login-logo" style="text-align:center">
                     <i class="fa fa-user fa-1x login-fa-user"></i>
                 </div>
-                <p class="login-box-msg">Success to Register Device</p>            
+                <p class="login-box-msg">Success to Edit Device</p>            
                     <div class="row">
                         <div class="col-xs-4">
                             <button type="button" class="btn btn-default btn-block btn-flat" data-dismiss="modal">Close</button>
@@ -354,19 +354,21 @@
     });
      function register(){
                 $('#addDVModal form').submit(function(){
-                    $.ajax({
+                    var jqXHR = $.ajax({
                         type: "POST",
                         data: $('#addDVModal form').serialize(),
                         url: "{% url 'RegisterDevice' %}",
                         cache: false,
                         dataType: "html",
-                        success: function(html, textStatus) {
+                        success: function(response) {
                             $('#addDVModal').modal('hide');   
                             $('#addDVModal form')[0].reset();  
 		            $("#Sadd").modal('show');                 
                         },
                        
-                    });
+                    }).done(function(data,tatus,jqXHR){
+			$("#Sadd").modal('show'); 
+                    })
                     return false;
                 });
             }
@@ -382,6 +384,7 @@ $(function() {
       data: $form.serialize(),
       success: function(data){
         $form.replaceWith($.parseHTML(data));
+	$("#SEdit").modal('show'); 
       }
     });
   });
