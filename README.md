@@ -10,6 +10,7 @@ Authorized administrators can register, add, delete, etc, you can take advantage
 ### Install them for developing ( Ubuntu 14.04 LTS )
 * python 2.7 && pip
 * django 1.9.7
+* buid-essential
 * virtualevu
 
 1.  Update your local package index first :
