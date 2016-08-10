@@ -81,4 +81,4 @@ Authorized administrators can register, add, delete, etc, you can take advantage
 * Bootstrap -http://getbootstrap.com/
 * font-awesome -https://fortawesome.github.io/Font-Awesome/
 * javascript -https://www.javascript.com/
-* sqlite -https://www.sqlite.org/
+* sqlite3 -https://www.sqlite.org/
