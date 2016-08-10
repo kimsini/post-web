@@ -17,7 +17,19 @@ Authorized administrators can register, add, delete, etc, you can take advantage
     ```bash
     $ sudo apt-get update && sudo apt-get upgrade
     ```
-    
+1. If python is not installed, and then you select the command that that are appropriate for the operating system
+   Type it in the console
+
+    ```bash
+    Debian or Ubuntu
+    $ sudo apt-get install python
+    Fedora(~21)
+    $ sudo yum install python
+    Fedora(22~)
+    $ sudo dnf install python
+    openSUSE
+    $ sudo zypper install python
+    ```
 2.  Install git to clone this project :
 
     ```bash
